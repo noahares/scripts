@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DEV_ID='alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback'
+
+setsid -f noisetorch -i -s $DEV_ID -t 95
+notify-send "Started noisetorch"

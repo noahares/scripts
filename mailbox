@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1)
+        notify-send "Fetching mail..."
+        mailsync.sh > /dev/null && notify-send "Mail fetched.";;
+esac
+
+kit_mail=$(find ~/.mail/kit/INBOX/new/ -type f | wc -l)
+yahoo_mail=$(find ~/.mail/yahoo/Inbox/new/ -type f | wc -l)
+
+if [[ $kit_mail > 0 ]]; then
+        kit_status="$kit_mail "
+else
+        kit_status="$kit_mail "
+fi
+
+if [[ $yahoo_mail > 0 ]]; then
+        yahoo_status="$yahoo_mail "
+else
+        yahoo_status="$yahoo_mail "
+fi
+
+echo "KIT: $kit_status | YAHOO: $yahoo_status"

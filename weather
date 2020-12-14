@@ -1,0 +1,15 @@
+#!/bin/bash
+
+getforecast() { curl -s "wttr.in/Karlsruhe" > "$XDG_DATA_HOME/weatherreport" || exit 1; }
+showweather() { printf "%s" "$(sed '16q;d' "$XDG_DATA_HOME/weatherreport" | grep -wo "[0-9]*%" | sort -n | sed -e '$!d' | sed -e "s/^/ /g" | tr -d '\n')"
+
+    sed '13q;d' "$XDG_DATA_HOME/weatherreport" | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print " ",$1 "°","",$2 "°"}'; }
+
+case $BLOCK_BUTTON in
+    1) setsid "$TERM" -e less -Srf "$XDG_DATA_HOME/weatherreport" & ;;
+    3) getforecast && showweather && notify-send "Updating weatherreport..." ;;
+esac
+
+[ "$(stat -c %y "$XDG_DATA_HOME/weatherreport" 2>/dev/null | cut -d' ' -f1)" = "$(date '+%Y-%m-%d')" ] || getforecast
+
+showweather
