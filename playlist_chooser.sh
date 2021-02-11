@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 PLAYLIST_DIR="$(xdg-user-dir MUSIC)/playlists"
 

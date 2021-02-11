@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cur_sink=$(pacmd list-sinks | grep '* index:' | tr -d '\n' | tail -c 1)
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 bgloc="$HOME/pictures/wallpapers/bg.jpg"
 

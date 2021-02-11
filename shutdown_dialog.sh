@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 CHOICE=$(echo -e "shutdown\nreboot\nlock\nlogout" | dmenu)
 

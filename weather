@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 getforecast() { curl -s "wttr.in/Karlsruhe" > "$XDG_DATA_HOME/weatherreport" || exit 1; }
 showweather() { printf "%s" "$(sed '16q;d' "$XDG_DATA_HOME/weatherreport" | grep -wo "[0-9]*%" | sort -n | sed -e '$!d' | sed -e "s/^/ /g" | tr -d '\n')"

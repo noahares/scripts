@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 notify-send "Fetching Mail..."
 if [ -z "$1" ]; then

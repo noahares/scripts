@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 default="${1%.*}.pdf"
 if [[ ! -z $2 ]]; then
@@ -10,11 +10,12 @@ else
 fi
 pandoc "$1" \
     -f gfm \
-    --include-in-header ~/dotfiles/scripts/resources/inline_code.tex \
-    --include-in-header ~/dotfiles/scripts/resources/bullet_style.tex \
+    --include-in-header ~/repos/scripts/resources/inline_code.tex \
+    --include-in-header ~/repos/scripts/resources/bullet_style.tex \
     -V linkcolor:blue \
     -V geometry:a4paper \
-    -V geometry:margin=2cm \
-    --pdf-engine=xelatex \
-    --highlight-style ~/dotfiles/scripts/resources/custom.theme \
+    -V geometry:margin=1.5cm \
+   --pdf-engine=xelatex \
+    --highlight-style ~/repos/scripts/resources/custom.theme \
+    -f markdown+escaped_line_breaks \
     -o "$output"

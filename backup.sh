@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 rsync -aAXS --delete --info=progress2 /home/ares/Archive /mnt/backup
 rsync -aAXS --delete --info=progress2 /home/ares/.config /mnt/backup
