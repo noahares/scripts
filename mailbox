@@ -21,4 +21,4 @@ else
         yahoo_status="$yahoo_mail "
 fi
 
-echo "KIT: $kit_status | YAHOO: $yahoo_status"
+echo "$kit_status | $yahoo_status"
