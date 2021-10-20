@@ -2,4 +2,4 @@
 
 BOOKMARK_DIR="$HOME"/Nextcloud/bookmarks
 
-ls $BOOKMARK_DIR | dmenu -i -l 5 -fn "Monospace-10:normal" -x 20 -y 20 -dim "0.6" -w 1880 | xargs -r -I '{}' sh -c "echo '$1 $QUTE_URL' >> $BOOKMARK_DIR/'{}'"
+ls $BOOKMARK_DIR | rofi -dmenu -p "Select category" | xargs -r -I '{}' sh -c "echo '$1 $QUTE_URL' >> $BOOKMARK_DIR/'{}'"

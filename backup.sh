@@ -13,3 +13,6 @@ rsync -aAXS --delete --info=progress2 /home/ares/templates /mnt/backup
 rsync -aAXS --delete --info=progress2 /home/ares/videos /mnt/backup
 rsync -aAXS --delete --info=progress2 /home/ares/.ssh /mnt/backup
 rsync -aAXS --delete --info=progress2 /home/ares/.vpn /mnt/backup
+rsync -aAXS --delete --info=progress2 /home/ares/dotfiles-base /mnt/backup
+rsync -aAXS --delete --info=progress2 /home/ares/dotfiles-extended /mnt/backup
+rsync -aAXS --delete --info=progress2 /home/ares/repos /mnt/backup

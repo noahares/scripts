@@ -1,8 +1,6 @@
 #!/bin/sh
 
 BOOKMARK_DIR="$HOME"/Nextcloud/bookmarks
-alias dmenu_='dmenu -i -l 5 -fn "Monospace-10:normal" -dim "0.6" -x 20 -y 20 -w 1880'
 
-ls $BOOKMARK_DIR | dmenu_ | xargs -I '{}' cat $BOOKMARK_DIR/'{}' | dmenu_ | awk '{print $2}' | xargs -I '{}' $BROWSER '{}' & disown
-
-unalias dmenu_
+category=$(ls $BOOKMARK_DIR | rofi -dmenu -i -p "Category")
+cat $BOOKMARK_DIR/"$category" | rofi -dmenu -i -p "Bookmark" | awk '{print $2}' | xargs -I '{}' $BROWSER '{}' & disown

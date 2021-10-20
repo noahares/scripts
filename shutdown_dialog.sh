@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CHOICE=$(echo -e "shutdown\nreboot\nlock\nlogout" | dmenu)
+CHOICE=$(echo -e "shutdown\nreboot\nlock\nlogout" | rofi -dmenu -p "Power menu")
 
 case $CHOICE in
     shutdown)
