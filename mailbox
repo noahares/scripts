@@ -20,5 +20,9 @@ if [[ $yahoo_mail > 0 ]]; then
 else
         yahoo_status="$yahoo_mail "
 fi
+icon=""
+if [[ $kit_mail > 0 || $yahoo_mail > 0 ]]; then
+  $icon=""
+fi
 
-echo "$kit_status | $yahoo_status"
+echo "$kit_mail | $yahoo_mail $icon"
