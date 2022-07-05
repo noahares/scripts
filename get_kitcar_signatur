@@ -1,0 +1,1 @@
+git archive --remote=git@git.kitcar-team.de:kitcar/dokuwiki.git HEAD pages/organisation/teamstruktur/aussendarstellung/materialien_oeffentlichkeitsarbeit.txt | tar xO | awk '!p;/<\/code>/{p=1}' | awk '/<code>/{p=1}p' | sed '/<code>/d;s|</code>||g;s/^<Name>/Freundliche Grüße\nNoah Wahl/g;s/^<Vorstand.*/Team Navigation/g'
