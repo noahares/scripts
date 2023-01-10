@@ -22,7 +22,7 @@ else
 fi
 icon=""
 if [[ $kit_mail > 0 || $yahoo_mail > 0 ]]; then
-  $icon=""
+  icon=""
 fi
 
 echo "$kit_mail | $yahoo_mail $icon"
