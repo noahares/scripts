@@ -2,6 +2,11 @@
 
 # This is a wrapper for vifm to allow ueberzug images.
 
+if [[ "$DESKTOP_SESSION" == "Hyprland" ]]; then
+  vifm
+  exit
+fi
+
 export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
 
 cleanup() {
